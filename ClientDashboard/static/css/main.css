@@ -471,7 +471,7 @@ left: 60px !important;
 }
 
 
-.submitBtn input[type="submit"]{
+.submitBtn input[type="submit"], .submitBtn input[type="button"] {
 	padding: 10px 30px;
 	background-color: #fff;
 	cursor: pointer;
@@ -521,11 +521,55 @@ left: 60px !important;
 }
 
 .submitBtn > .restBtn .design_btn {
-border: 1px solid #00c4de;
-padding: 10px 60px;
-background-color: #fff;
-font-size: 22px;
-margin: 0 20px;
+    border: 1px solid #00c4de;
+    padding: 10px 60px;
+    background-color: #fff;
+    font-size: 22px;
+    margin: 0 20px;
 }
 
 /* design Upload page end */
+
+.yourDesigns{
+    width: 100%;
+    height: auto;
+    padding: 30px;
+    border: 1px solid #ddd;
+}
+
+.YoursTitle{
+    line-height: 2;
+    color: #333;
+    font-weight: 500;
+}
+
+.yourDesigns a {
+    color: #28afc3;
+    background-color: #fff;
+    border-color: #ccc;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    display: inline-block;
+    margin: 10px;
+}
+/* over view */
+.vOption{
+    background-color: #fff;
+    padding: 10 30px;
+    color: #28afc3;
+    border: 1px solid #28afc3;
+    border-radius: 10px;
+}
+
+.vOption{
+    text-decoration: none;
+    color: #28afc3;
+    font-size: 20px;
+}
+.vOption.btnL{
+float: left;
+}
+.vOption.btnR{
+float: right;
+}

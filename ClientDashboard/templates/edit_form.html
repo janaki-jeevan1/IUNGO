@@ -126,8 +126,12 @@
                             {{form.design_images.errors}}
                         </div>
                         <div class="submitBtn">
-                               <input type="submit" value="Update"/>
-                                <a href="{% url 'delete_design' %}?number={{design.0.design_number}}&type=1">Delete</a>
+                                <div class="restBtn">
+                                <input type="submit" class="design_btn" value="Update"/>
+                                <a href="{% url 'delete_design' %}?number={{design.0.design_number}}&type=1">
+                                <input type="button" class="design_btn"  value="Delete"/>
+                                </a>
+                                </div>
                         </div>
                      </form>
                 {% elif type == '2'%}
@@ -165,8 +169,10 @@
                         </div>
                         <div class="submitBtn">
                             <div class="restBtn">
-                               <input type="submit" value="Update"/>
-                                <a href="{% url 'delete_design' %}?number={{project.0.project_number}}&type=2">Delete</a>
+                               <input type="submit" class="design_btn" value="Update"/>
+                                <a href="{% url 'delete_design' %}?number={{project.0.project_number}}&type=2">
+                                <input type="button" class="design_btn" value="Delete"/>
+                                </a>
                             </div>
                         </div>
                      </form>

@@ -27,11 +27,17 @@
                    <input type="submit" value="Save"/>
             </div>
          </form>
+         <div>
+         <h5 class="YoursTitle">Your Design's</h5>
         {% if total_user_designs %}
+            <div class="yourDesigns">
             {% for designs in total_user_designs %}
                 <a href="{% url 'upload_details' %}?number={{designs.0.design_number}}&type=1">{{designs.0.design_name}} {{designs.0.design_type.name}}</a>
             {% endfor %}
+
+           </div>
         {% endif %}
+         </div>
 {% elif type == 2%}
         <form class="mainForm" action="/client/project_upload/" method="post" enctype="multipart/form-data">
             {% csrf_token %}
@@ -60,9 +66,14 @@
 
             </div>
          </form>
+        <div>
+            <h5 class="YoursTitle">Your Project's</h5>
         {% if total_user_projects %}
+            <div class="yourDesigns">
             {% for projects in total_user_projects %}
                 <a href="{% url 'upload_details' %}?number={{projects.0.project_number}}&type=2">{{projects.0.project_name}}-{{projects.0.project_type.name}}</a>
             {% endfor %}
+            </div>
         {% endif %}
+        </div>
 {% endif %}

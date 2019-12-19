@@ -177,7 +177,7 @@
                </div>
             </div>
             <br style="clear: both;">
-            <div class="subCategory">
+            <div class="category">
                 <label for="id_sub_category">Sub Category<sup>*</sup></label><br>
                <div class="mrSelector qualifiSector ">
                   {{form.sub_category}}
@@ -187,13 +187,16 @@
 
             <br style="clear: both;">
             <div class="submitBtn">
-               <input type="submit" value="Submit"/>
+               <div class="restBtn">
+                  <input class="design_btn" type="submit" value="Submit"/>
+                  <a href="/client/design_upload">
+                  <input class="design_btn" type="button" value="Upload Designs and Projects"/>
+                  </a>
+               </div>
+
+
             </div>
          </form>
-         <br style="clear: both;">
-            <div class="submitBtn">
-               <a href="/client/design_upload"><input type="submit" value="Upload Designs and Projects"/></a>
-            </div>
       </aside>
       <script src="/static/js/main.js"></script>
 
