@@ -110,14 +110,14 @@ class ConfirmationCode(models.Model):
 class Category(models.Model):
     name = models.CharField(verbose_name="Name", max_length=50)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
 class sub_category(models.Model):
     name = models.CharField(verbose_name="Name", max_length=30)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
 class child_sub_category(models.Model):
@@ -125,8 +125,9 @@ class child_sub_category(models.Model):
     sub_category = models.ForeignKey(sub_category, on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
-    def __unicode__(self):
-        return u'{0}'.format(self.name)
+    def __str__(self):
+        return self.name
+
 
 class Design(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -169,9 +170,10 @@ class Portfolio(models.Model):
     client = models.BooleanField(verbose_name="Client", default=0)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     sub_category = models.ForeignKey(sub_category, on_delete=models.CASCADE)
+    child_sub_category=models.ForeignKey(child_sub_category,on_delete=models.CASCADE)
 
-    def __unicode__(self):
-        return u'{0}'.format(self.user)
+    def __str__(self):
+        return self.user
 
 @receiver(post_save, sender=User)
 def create_client_profile(sender, instance, created, **kwargs):
@@ -192,8 +194,8 @@ class WalkinCustomer(models.Model):
     mobile_phone = models.CharField(verbose_name="Mobile phone", max_length=10, unique=True, blank=False, null=True)
     date_time = models.DateField(verbose_name="Actual BRS Start Date", blank=True, null=True)
 
-    def __unicode__(self):
-        return u'{0}'.format(self.name)
+    def __str__(self):
+        return self.user
 
 class DeisgnUploads(models.Model):
     user = models.ForeignKey(User, related_name="client_designs", on_delete=models.CASCADE)

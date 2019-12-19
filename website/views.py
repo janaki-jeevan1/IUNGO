@@ -168,7 +168,7 @@ def customerpage(request):
         user = None
     if user is not None:
 
-        return render(request, 'index1.html',{'city':city})
+        return render(request, 'index1.html',{'city':city,'user':user})
     else:
         messages.error(request, 'Invalid Username or password')
         return redirect('customerpage')
@@ -297,9 +297,11 @@ def view_profile(request, user_id):
 
     return render(request, 'viewprofile.html', {'user': user1, 'users': project_images_list,'users1':design_images_list})
 
+
 def enquiry(request,user_id):
    user=Portfolio.objects.get(user_id=user_id)
    return render(request,'enquiry.html',{'user':user})
+
 
 def design_photos(request, user_id):
     #import pdb;pdb.set_trace()

@@ -45,10 +45,18 @@
 					<a class="navbar-brand" href="index.html"></a>
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
+                {% if user %}
 				<div class="collapse navbar-collapse" id="top-navbar-1">
-					<ul class="nav navbar-nav navbar-right"><img  width="40" src="/static/img/user.png"><li>{{ user.phone_number }}</li>
+					<ul class="nav navbar-nav navbar-right"><img  width="40" src="/static/img/user.png"><li></li>
 					</ul>
 				</div>
+                {% else %}
+                <div class="collapse navbar-collapse" id="top-navbar-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="/client/client_login">Login for BusIness</a></li>
+						<li><a href="/login_register">Login / Register</a></li>
+					</ul>
+				</div>{% endif %}
 			</div>
 		</nav>
 
