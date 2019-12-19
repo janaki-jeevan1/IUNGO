@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+</head>
+<body>
+<canvas id="LineChart" height="150" width="400"></canvas>
+</body>
+</html>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.bundle.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.bundle.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+<script type="text/javascript">
+
+        var json_lists = {{ json_list|safe }}
+        var dates = {{ dates|safe }}
+        var id = {{ id }}
+
+        if ( id == '1'){
+            var object = "clicks"
+        } else if (id == '2'){
+            var object = "views"
+        }
+<!--        else if (id == '3'){-->
+<!--            var object = "designs"-->
+<!--            var object1 = "invoices"-->
+<!--            var object2 = "proposals"-->
+<!--        } else if (id == '4'){-->
+<!--            var object = "Appointments"-->
+<!--        }-->
+        if (id == '1' || id == '2'){
+            var ctx = document.getElementById('LineChart').getContext('2d');
+            var chart = new Chart(ctx, {
+                // The type of chart we want to create
+                type: 'line',
+                // The data for our dataset
+                data: {
+                    labels: [dates[0], dates[1], dates[2], dates[3], dates[4], dates[5], dates[6]],
+                    datasets: [{
+                        label: 'Clicks for last 7 days',
+                        borderColor: 'rgb(255, 99, 132)',
+                        data: [json_lists[0][object], json_lists[1][object], json_lists[2][object], json_lists[3][object], json_lists[4][object], json_lists[5][object], json_lists[6][object]]
+                    }]
+                },
+
+                // Configuration options go here
+                options: {
+                scales: {
+                    yAxes: [{
+                      scaleLabel: {
+                        display: true,
+                        labelString: 'Counts'
+                      }
+                    }],
+                    xAxes: [{
+                      scaleLabel: {
+                        display: true,
+                        labelString: 'Dates'
+                      }
+                    }]
+                  }
+                }
+            });
+        }
+
+<!--        if (id == '3'){-->
+<!--            var ctx = document.getElementById('LineChart').getContext('2d');-->
+<!--            var chart = new Chart(ctx, {-->
+<!--                // The type of chart we want to create-->
+<!--                type: 'line',-->
+<!--                // The data for our dataset-->
+<!--                data: {-->
+<!--                    labels: [dates[0], dates[1], dates[2], dates[3], dates[4], dates[5], dates[6]],-->
+<!--                    datasets: [{-->
+<!--                        label: object,-->
+<!--                        fill: "true",-->
+<!--                        fillColor: "rgba(220,220,220,0.2)",-->
+<!--                        strokeColor: "rgba(220,220,220,1)",-->
+<!--                        pointColor: "rgba(220,220,220,1)",-->
+<!--                        pointStrokeColor: "#fff",-->
+<!--                        pointHighlightFill: "#fff",-->
+<!--                        pointHighlightStroke: "rgba(220,220,220,1)",-->
+<!--                        borderColor: 'rgb(180, 99, 132)',-->
+<!--                        data: [json_lists[0][object], json_lists[1][object], json_lists[2][object], json_lists[3][object], json_lists[4][object], json_lists[5][object], json_lists[6][object]]-->
+<!--                    }, {-->
+<!--                        label: object1,-->
+<!--                        fill: "true",-->
+<!--                        fillColor: "rgba(151,187,205,0.2)",-->
+<!--                        strokeColor: "rgba(151,187,205,1)",-->
+<!--                        pointColor: "rgba(151,187,205,1)",-->
+<!--                        pointStrokeColor: "#fff",-->
+<!--                        pointHighlightFill: "#fff",-->
+<!--                        pointHighlightStroke: "rgba(151,187,205,1)",-->
+<!--                        borderColor: 'rgb(255, 99, 132)',-->
+<!--                        data: [json_lists[0][object1], json_lists[1][object1], json_lists[2][object1], json_lists[3][object1], json_lists[4][object1], json_lists[5][object1], json_lists[6][object1]]-->
+<!--                    }, {-->
+<!--                        label: object2,-->
+<!--                        fill: "false",-->
+<!--                        borderColor: 'rgb(0, 99, 132)',-->
+<!--                        data: [json_lists[0][object2], json_lists[1][object2], json_lists[2][object2], json_lists[3][object2], json_lists[4][object2], json_lists[5][object2], json_lists[6][object2]]-->
+<!--                    }]-->
+<!--                },-->
+
+<!--                // Configuration options go here-->
+<!--                options: {-->
+<!--                scales: {-->
+<!--                    yAxes: [{-->
+<!--                      scaleLabel: {-->
+<!--                        display: true,-->
+<!--                        labelString: 'Counts'-->
+<!--                      }-->
+<!--                    }],-->
+<!--                    xAxes: [{-->
+<!--                      scaleLabel: {-->
+<!--                        display: true,-->
+<!--                        labelString: 'Dates'-->
+<!--                      }-->
+<!--                    }]-->
+<!--                  }-->
+<!--                }-->
+<!--            });-->
+<!--        }-->
+</script>

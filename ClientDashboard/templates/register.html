@@ -1,0 +1,377 @@
+
+
+
+<!--&lt;!&ndash;<form action="/register" method="POST" enctype="multipart/form-data" class="form-horizontal" role="form">&ndash;&gt;-->
+<!--&lt;!&ndash;{% csrf_token %}&ndash;&gt;-->
+<!--&lt;!&ndash;{% for field in form.visible_fields %}&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="form-group">&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;<label class="control-label col-sm-2" >{{ field.label_tag }} {% if field.field.required %}<span style="color:red;">*</span>{% endif %}</label>&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;<div class="col-sm-10">{{ field }}{% if field.help_text %} {{ field.help_text }} {% endif %}&ndash;&gt;-->
+<!--&lt;!&ndash;    {% if field.errors %}<p style="color:red;">{{ field.errors|striptags }}</p>{% endif %}&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;{% endfor %}&ndash;&gt;-->
+<!--&lt;!&ndash;<button id = "submit" class="btn vd_bg-green vd_white width-100" type="submit" value="submit">Submit</b`utton>&ndash;&gt;-->
+<!--&lt;!&ndash;</form>&ndash;&gt;-->
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+
+<!--{% load i18n %}-->
+
+<!--    <head>-->
+
+<!--        <meta charset="utf-8">-->
+<!--        <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+<!--        <meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--        <title>Iungo</title>-->
+
+<!--        &lt;!&ndash; CSS &ndash;&gt;-->
+<!--        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400|Roboto:300,400,500">-->
+<!--        <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">-->
+<!--        <link rel="stylesheet" href="/static/font-awesome/css/font-awesome.min.css">-->
+<!--        <link rel="stylesheet" href="/static/css/animate.css">-->
+<!--        <link rel="stylesheet" href="/static/css/style.css">-->
+
+<!--        &lt;!&ndash; HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries &ndash;&gt;-->
+<!--        &lt;!&ndash; WARNING: Respond.js doesn't work if you view the page via file:// &ndash;&gt;-->
+<!--        &lt;!&ndash;[if lt IE 9]>-->
+<!--            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>-->
+<!--            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>-->
+<!--        <![endif]&ndash;&gt;-->
+
+<!--        &lt;!&ndash; Favicon and touch icons &ndash;&gt;-->
+<!--        <link rel="shortcut icon" href="/static/ico/favicon.png">-->
+<!--        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/ico/apple-touch-icon-144-precomposed.png">-->
+<!--        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/ico/apple-touch-icon-114-precomposed.png">-->
+<!--        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/ico/apple-touch-icon-72-precomposed.png">-->
+<!--        <link rel="apple-touch-icon-precomposed" href="/static/ico/apple-touch-icon-57-precomposed.png">-->
+
+<!--    </head>-->
+
+<!--    <body>-->
+
+<!--		&lt;!&ndash; Top menu &ndash;&gt;-->
+<!--		<nav class="navbar navbar-inverse" role="navigation">-->
+<!--			<div class="container">-->
+<!--				<div class="navbar-header">-->
+<!--					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">-->
+<!--						<span class="sr-only">Toggle navigation</span>-->
+<!--						<span class="icon-bar"></span>-->
+<!--						<span class="icon-bar"></span>-->
+<!--						<span class="icon-bar"></span>-->
+<!--					</button>-->
+<!--					<a class="navbar-brand" href="index.html"></a>-->
+<!--				</div>-->
+<!--				&lt;!&ndash; Collect the nav links, forms, and other content for toggling &ndash;&gt;-->
+<!--				<div class="collapse navbar-collapse" id="top-navbar-1">-->
+<!--					<ul class="nav navbar-nav navbar-right">-->
+<!--						<li><a href="#">Login for BusIness</a></li>-->
+<!--						<li><a href="#">Login / Register</a></li>-->
+<!--					</ul>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</nav>-->
+<!--        &lt;!&ndash; content start &ndash;&gt;-->
+<!--        <div class="container login-container">-->
+<!--            <div class="row">-->
+<!--                <div class="col-md-8 login-form-1">-->
+
+<!--                </div>-->
+<!--                <div class="col-md-4 login-form-2">-->
+<!--                    <h3>Register to IUNGO</h3>-->
+
+<!--                        {% csrf_token %}-->
+<!--                      <div class="form-group phoneForms">-->
+<!--                          <label for="id_mobile_phone">Phone Number</label>-->
+<!--                          {{form.mobile_phone}}-->
+<!--                          <p class="or">&nbsp</p>-->
+<!--                      </div>-->
+<!--                        <div class="form-group">-->
+<!--                          <label for="id_email">Email Id</label>-->
+<!--                            {{form.email}}-->
+<!--                        </div>-->
+<!--                        <div class="form-group password_Field">-->
+<!--                            <label for="id_password1">Password</label>-->
+<!--                           {{form.password1}}-->
+<!--                        </div>-->
+
+<!--                        <div class="form-group">-->
+<!--                            <button type="submit" class="btnSubmit"  type="submit" value="Next">{% trans "Sign In" %}</button>-->
+
+<!--                        </div>-->
+
+<!--                    </form>-->
+
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash; content end &ndash;&gt;-->
+<!--        &lt;!&ndash; Footer &ndash;&gt;-->
+<!--        <footer>-->
+<!--	        <div class="container">-->
+<!--	        	<div class="row">-->
+<!--              <div class="col-xs-12 col-md-3">-->
+<!--                <ul>-->
+<!--                  <li>Practo</li>-->
+<!--                  <li>About</li>-->
+<!--                  <li>Blog</li>-->
+<!--                  <li>Careers</li>-->
+<!--                  <li>Press</li>-->
+<!--                  <li>Contact Us</li>-->
+<!--                </ul>-->
+<!--              </div>-->
+<!--              <div class="col-xs-12 col-md-3">-->
+<!--                <ul>-->
+<!--                <li>For patients</li>-->
+<!--                <li>Search for doctors</li>-->
+<!--                <li>Search for clinics</li>-->
+<!--                <li>Search for hospitals</li>-->
+<!--                <li>Book Diagnostic Tests</li>-->
+<!--                <li>Book Full Body Checkups</li>-->
+<!--                <li>Read health articles</li>-->
+<!--                <li>Read about medicines</li>-->
+<!--                <li>Practo drive</li>-->
+<!--                <li>Health app</li>-->
+<!--                </ul>-->
+<!--              </div>-->
+<!--              <div class="col-xs-12 col-md-3">-->
+<!--                <ul>-->
+<!--                <li>For doctors</li>-->
+<!--                <li>Practo Profile</li>-->
+<!--                <li>For clinics</li>-->
+<!--                <li>Ray by Practo</li>-->
+<!--                <li>Practo Reach</li>-->
+<!--                <li>Ray Tab</li>-->
+<!--                <li>Practo Pro</li>-->
+<!--                </ul>-->
+<!--              </div>-->
+
+<!--              <div class="col-xs-12 col-md-3">-->
+<!--                <ul>-->
+<!--                <li>Social</li>-->
+<!--                <li>Facebook</li>-->
+<!--                <li>Twitter</li>-->
+<!--                <li>LinkedIn</li>-->
+<!--                <li>Youtube</li>-->
+<!--                <li>Github</li>-->
+<!--                </ul>-->
+<!--              </div>-->
+
+
+<!--            </div>-->
+<!--	        </div>-->
+<!--        </footer>-->
+
+
+<!--        &lt;!&ndash; Javascript &ndash;&gt;-->
+<!--        <script src="/static/js/jquery-1.11.1.min.js"></script>-->
+<!--        <script src="/static/bootstrap/js/bootstrap.min.js"></script>-->
+<!--        <script src="/static/js/jquery.backstretch.min.js"></script>-->
+<!--        <script src="/static/js/wow.min.js"></script>-->
+<!--        <script src="/static/js/retina-1.1.0.min.js"></script>-->
+<!--        <script src="/static/js/scripts.js"></script>-->
+
+<!--        &lt;!&ndash;[if lt IE 10]>-->
+<!--            <script src="/static/js/placeholder.js"></script>-->
+<!--        <![endif]&ndash;&gt;-->
+
+<!--    </body>-->
+
+<!--</html>-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Iungo</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400|Roboto:300,400,500">
+        <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/static/css/animate.css">
+        <link rel="stylesheet" href="/static/css/style.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="/static/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="/static/ico/apple-touch-icon-57-precomposed.png">
+
+    </head>
+
+    <body>
+
+		<!-- Top menu -->
+		<nav class="navbar navbar-inverse" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html"></a>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="top-navbar-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="/client/client_login">Login for BusIness</a></li>
+						<li><a href="/client/client_register">Login / Register</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+        <!-- content start -->
+        <div class="navBG"></div>
+        <div class="navloginMenu">
+          <div class="loginCentermenu">
+              <ul>
+                <li> <a href="/client/client_login">Login</a></li>
+                <li><a class="active" href="/client/client_register">Register</a></li>
+              </ul>
+          </div>
+        </div>
+
+        <div class="container login-container">
+            <div class="row">
+                <div class="col-md-7 login-form-1">
+                </div>
+                {% if messages %}
+
+                      {% for message in messages %}
+
+                  <div class="alert alert-danger">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="icon-cross"></i></button>
+                    <span class="vd_alert-icon"><i class="fa fa-exclamation-circle vd_red"></i></span><strong>{{message}}</strong></div>
+
+                      {% endfor %}
+
+                    {% endif %}
+                <div class="col-md-5 login-form-2">
+                    <h3>Register to IUNGO</h3>
+                    <h4>Create account</h4>
+                    <form class="login" method="POST" action="{% url 'client_register' %}">
+                        {% csrf_token %}
+                        <div class="form-group">
+                          <label for="id_mobile_phone">Mobile Number</label>
+                            {{form.mobile_phone}}
+                            {{form.mobile_phone.errors}}
+                        </div>
+                        <div class="form-group">
+                            <label for="id_email">Email</label>
+                            {{form.email}}
+                            {{form.email.errors}}
+                        </div>
+                        <div class="form-group">
+                            <label for="id_password1">Password</label>
+                            {{form.password1}}
+                            {{form.password1.errors}}
+                        </div>
+                        <div class="form-group">
+                            <label for="id_password2">Confirm Password</label>
+                            {{form.password2}}
+                            {{form.password2.errors}}
+                        </div>
+                        <div class="form-group">
+                            <input id="createId" type="submit" class="btnSubmit" value="Register" />
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- content end -->
+        <!-- Footer -->
+        <footer>
+	        <div class="container">
+	        	<div class="row">
+              <div class="col-xs-12 col-md-3">
+                <ul>
+                  <li>Practo</li>
+                  <li>About</li>
+                  <li>Blog</li>
+                  <li>Careers</li>
+                  <li>Press</li>
+                  <li>Contact Us</li>
+                </ul>
+              </div>
+              <div class="col-xs-12 col-md-3">
+                <ul>
+                <li>For patients</li>
+                <li>Search for doctors</li>
+                <li>Search for clinics</li>
+                <li>Search for hospitals</li>
+                <li>Book Diagnostic Tests</li>
+                <li>Book Full Body Checkups</li>
+                <li>Read health articles</li>
+                <li>Read about medicines</li>
+                <li>Practo drive</li>
+                <li>Health app</li>
+                </ul>
+              </div>
+              <div class="col-xs-12 col-md-3">
+                <ul>
+                <li>For doctors</li>
+                <li>Practo Profile</li>
+                <li>For clinics</li>
+                <li>Ray by Practo</li>
+                <li>Practo Reach</li>
+                <li>Ray Tab</li>
+                <li>Practo Pro</li>
+                </ul>
+              </div>
+
+              <div class="col-xs-12 col-md-3">
+                <ul>
+                <li>Social</li>
+                <li>Facebook</li>
+                <li>Twitter</li>
+                <li>LinkedIn</li>
+                <li>Youtube</li>
+                <li>Github</li>
+                </ul>
+              </div>
+
+
+            </div>
+	        </div>
+        </footer>
+
+
+        <!-- Javascript -->
+        <script src="/static/js/jquery-1.11.1.min.js"></script>
+        <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/static/js/jquery.backstretch.min.js"></script>
+        <script src="/static/js/wow.min.js"></script>
+        <script src="/static/js/retina-1.1.0.min.js"></script>
+        <script src="/static/js/scripts.js"></script>
+
+        <!--[if lt IE 10]>
+            <script src="/static/js/placeholder.js"></script>
+        <![endif]-->
+
+    </body>
+
+</html>

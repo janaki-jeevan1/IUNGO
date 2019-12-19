@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=1600, initial-scale=1, maximum-scale=1">
+      <title>Iungo Advanced Technologies</title>
+      <!-- styles -->
+      <link rel="stylesheet" href="/static/font-awesome/css/font-awesome.min.css">
+      <link rel="stylesheet" href="/static/css/main.css">
+      <!-- javascripts -->
+      <script src="/static/js/jquery-1.11.1.min.js"></script>
+   </head>
+   <body>
+      <header>
+         <div class="logo">
+            <img src="/static/img/logo.png" alt="logo">
+         </div>
+      </header>
+      <nav class="carousel">
+         <div class="userProfile">
+            <div id="user">
+               <div class="imgtag">
+                  {% if user.portfolio.profile_pic %}
+                     <img src="/media/{{user.portfolio.profile_pic}}" alt="user">
+                  {% else %}
+                     <img src="/static/img/empty.png" alt="user">
+                  {% endif %}
+               </div>
+               <div class="name">
+                  <p>{{user.first_name}} {{user.last_name}}</p>
+               </div>
+            </div>
+         </div>
+         <div class="navItems">
+            <div class="menuBtns">
+               <ul>
+<!--                  <li><a  id="setting" href="#">Settings &nbsp; <i class="fa fa-cog" aria-hidden="true"></i></a></li>-->
+                  <li><a href="/client/logout">Logout &nbsp; <i class="fa fa-power-off" aria-hidden="true"></i></a></li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+      <nav class="vertical-menu">
+         <div id="sidebar-wrapper">
+           <!-- <div id="btn-triangle-left"></div> -->
+            <ul id="sidebar-nav">
+               <li>
+                  <a href="/client/overview">
+                  <span class="imgs"><img src="/static/img/overview.svg" alt=""></span>
+                  <span class="btnText">Overview</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="/client/portfolio">
+                  <span class="imgs"><img src="/static/img/profilesettings.svg" alt=""></span>
+                  <span class="btnText">Profile Settings</span>
+                  </a>
+               </li>
+               <!-- <li>
+                  <a href="#">
+                  <span class="imgs"><img src="/static/img/appointments.svg" alt=""></span>
+                  <span class="btnText">Appointments</span>
+                  </a>
+               </li>
+               <li>
+                  <a class="arrowBtn" href="#">
+                  <span class="imgs"><img src="/static/img/iungocloud.svg" alt=""></span>
+                  <span class="btnText">Iungo Cloud</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="#">
+                  <span class="imgs"><img src="/static/img/feedbacks.svg" alt=""></span>
+                  <span class="btnText">Feedbacks</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="#">
+                  <span class="imgs"><img src="/static/img/notification.svg" alt=""></span>
+                  <span class="btnText">Notification</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="#">
+                  <span class="imgs"><img src="/static/img/reports.svg" alt=""></span>
+                  <span class="btnText">Reports</span>
+                  </a>
+               </li> -->
+            </ul>
+         </div>
+      </nav>
+      <aside class="mainSection">
+         <div class="designOrproject">
+             <label for="designproject">Design/Project<sup>*</sup></label><br>
+               <div class="mrSelector designOrprojectSector ">
+                  <select id="designproject">
+                     <option value="----">------</option>
+                     <option value="design">Design</option>
+                     <option value="project">Project</option>
+                  </select>
+               </div>
+            </div>
+         {% if error == 1 %}
+            <p> Please Try again.</p>
+         {% else %}
+            <div id="upload_section"></div>
+         {% endif %}
+      </aside>
+      <script src="/static/js/main.js"></script>
+      <script type="text/javascript">
+
+             $("#designproject").change(function () {
+               var detail = $(this).val();
+               $.ajax({
+                 url: '{% url 'load_upload_form' %}',
+                 data: {
+                   'detail': detail
+                 },
+                 success: function (data) {
+                   $("#upload_section").html(data);
+                 }
+               });
+
+          });
+
+       </script>
+   </body>
+</html>

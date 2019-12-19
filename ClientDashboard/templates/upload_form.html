@@ -1,0 +1,68 @@
+
+{% if type == 1%}
+
+        <form class="mainForm" action="/client/design_upload/" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <br style="clear: both;">
+            <div class="designType">
+               <p class="label">Type<sup>*</sup> </p>
+               <div class="mrSelector qualifiSector ">
+                  {{form.design_type}}
+                   {{form.design_type.errors}}
+               </div>
+            </div>
+            <br style="clear: both;">
+            <div class="designUploadNameID">
+               <label for="id_design_name">Name<sup>*</sup></label><br>
+               {{form.design_name}}
+               {{form.design_name.errors}}
+            </div>
+            <br style="clear: both;">
+            <div class="uploadFormimageUpload">
+               <p class="label">Project Images<sup>*</sup> </p>
+               {{form.design_images}}
+               {{form.design_images.errors}}
+            </div>
+            <div class="submitBtn">
+                   <input type="submit" value="Save"/>
+            </div>
+         </form>
+        {% if total_user_designs %}
+            {% for designs in total_user_designs %}
+                <a href="{% url 'upload_details' %}?number={{designs.0.design_number}}&type=1">{{designs.0.design_name}} {{designs.0.design_type.name}}</a>
+            {% endfor %}
+        {% endif %}
+{% elif type == 2%}
+        <form class="mainForm" action="/client/project_upload/" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <br style="clear: both;">
+            <div class="designType">
+               <p class="label">Type<sup>*</sup> </p>
+               <div class="mrSelector qualifiSector ">
+                  {{form.project_type}}
+                  {{form.project_type.errors}}
+               </div>
+            </div>
+            <br style="clear: both;">
+            <div class="designUploadNameID">
+               <label for="id_project_name">Name<sup>*</sup></label><br>
+               {{form.project_name}}
+               {{form.project_name.errors}}
+            </div>
+            <br style="clear: both;">
+            <div class="uploadFormimageUpload">
+               <p class="label">Project Images<sup>*</sup> </p>
+               {{form.project_images}}
+               {{form.project_images.errors}}
+            </div>
+            <div class="submitBtn">
+                   <input type="submit" value="Save"/>
+
+            </div>
+         </form>
+        {% if total_user_projects %}
+            {% for projects in total_user_projects %}
+                <a href="{% url 'upload_details' %}?number={{projects.0.project_number}}&type=2">{{projects.0.project_name}}-{{projects.0.project_type.name}}</a>
+            {% endfor %}
+        {% endif %}
+{% endif %}

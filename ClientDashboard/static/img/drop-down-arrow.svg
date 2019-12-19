@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="11.365" height="5.682" viewBox="0 0 11.365 5.682">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #35cae0;
+      }
+    </style>
+  </defs>
+  <g id="drop-down-arrow" transform="translate(0 -63.75)">
+    <g id="arrow-drop-down" transform="translate(0 63.75)">
+      <path id="Path_5029" data-name="Path 5029" class="cls-1" d="M0,63.75l5.682,5.682,5.682-5.682Z" transform="translate(0 -63.75)"/>
+    </g>
+  </g>
+</svg>

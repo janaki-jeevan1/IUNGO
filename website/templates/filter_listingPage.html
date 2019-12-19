@@ -1,0 +1,36 @@
+{% if users %}
+{% for user in users %}
+               <div class="mainListingcard">
+                  <div class="profileImg">
+                     <img src="{{user.profile_pic.url}}" alt="user1">
+                  </div>
+                  <div class="profile_textfield">
+                     <div class="userDesignation">
+                        <p id="Name">{{user.user.username}}</p>
+                        <small>{{ user.category }}-{{ user.sub_category }}</small>
+                     </div>
+                     <div class="Userdetails">
+                        <div class="left">
+                           <p><img src="/static/img/listingPage/Experience.png"> {{ user.qualification }} </p>
+                           <p><img src="/static/img/listingPage/Timing.png">  {{user.experience}}+ Years</p>
+                          <p><img src="/static/img/Location.svg"/>{{ user.location }}</p>
+                        </div>
+                        <div class="right">
+                           <p>125+ Reviews</p>
+                           <p>{{ user.user_id }}50 Completed Projects</p>
+                            <p>{{ user.budget }}L</p>
+                        </div>
+                        <br>
+                        <div style="float: right">
+                            <a href="{% url 'view_profile' user.user_id %}">
+                                <button class="viewProfile" type="button" name="button">ViewProfile</button></a>
+                            <a href="{% url 'enquiry' user.user_id %}">
+                           <button class="bookAppointment" type="button" name="button">Enquiry</button></a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+{% endfor %}
+{% else %}
+    No results to display
+{% endif %}
