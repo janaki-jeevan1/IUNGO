@@ -84,6 +84,7 @@ def welcome(request):
     context = {}
     return render(request, 'welcome.html', context)
 
+
 def client_register(request):
     if request.method == "GET":
         context = {}
@@ -117,7 +118,7 @@ def auth_view(request):
     if username and password:
         number = User.objects.get(portfolio__mobile_phone=username)
         if number:
-            user = auth.authenticate(username=number.username,password=password)
+            user = auth.authenticate(username=number.username, password=password)
             try:
                 userobj = User.objects.get(portfolio__mobile_phone=username)
             except Portfolio.DoesNotExist:
