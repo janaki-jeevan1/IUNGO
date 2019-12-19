@@ -93,19 +93,24 @@ def client_register(request):
         return render_to_response('register.html', context)
 
     if request.method == 'POST':
-        context = {}
         form = RegistrationForm(request.POST)
         if form.is_valid():
-            obj = form.save(commit=False)
-            obj.is_active = 1
-            obj.email = form.cleaned_data["email"]
-            obj.username = form.cleaned_data['email'].split('@')[0]
-            obj.save()
-            obj.portfolio.mobile_phone = form.cleaned_data["mobile_phone"]
-            obj.portfolio.client = 1
-            # send_registration_confirmation(obj.username)
-            obj.save()
-            return redirect('/client/client_login')
+            try:
+                number = Portfolio.objects.get(mobile_phone=form.cleaned_data["mobile_phone"])
+                if number:
+                    form.errors['mobile_phone'] = 'phone number already exists, please try a different number'
+                    return render(request, 'register.html', {'form': form})
+            except:
+                obj = form.save(commit=False)
+                obj.is_active = 1
+                obj.email = form.cleaned_data["email"]
+                obj.username = form.cleaned_data['email'].split('@')[0]
+                obj.save()
+                obj.portfolio.mobile_phone = form.cleaned_data["mobile_phone"]
+                obj.portfolio.client = 1
+                # send_registration_confirmation(obj.username)
+                obj.save()
+                return redirect('/client/client_login')
         else:
             return render(request, 'register.html', {'form': form})
 
@@ -116,7 +121,11 @@ def auth_view(request):
     password = request.POST.get('password', '')
     otp = request.POST.get('OTP', '')
     if username and password:
-        number = User.objects.get(portfolio__mobile_phone=username)
+        try:
+            number = User.objects.get(portfolio__mobile_phone=username)
+        except User.DoesNotExist:
+            messages.error(request, 'Phone number does not exist, please register and try again.')
+            return render(request, 'login.html')
         if number:
             user = auth.authenticate(username=number.username, password=password)
             try:
@@ -141,7 +150,11 @@ def auth_view(request):
             return render(request, 'login.html')
     elif username and global_otp:
         if otp == str(global_otp[0]):
-            number = User.objects.get(portfolio__mobile_phone=username)
+            try:
+                number = User.objects.get(portfolio__mobile_phone=username)
+            except User.DoesNotExist:
+                messages.error(request, 'Phone number does not exist, please register and try again.')
+                return render(request, 'login.html')
             if number:
                 user = auth.authenticate(username=number.username, portfolio__mobile_number=username)
                 try:
