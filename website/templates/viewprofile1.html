@@ -53,26 +53,26 @@
       <nav>
          <div class="listingNavMenu1">
             <div class="listingNavInput">
-{#               <div id="mainForms" class="row wow fadeInLeft">#}
-{#                  <div class="col-sm-8 noPadding">#}
-{#                     <div class="form-group">#}
-{#                        <input class="form-control" placeholder="Interior, Architects, Contractors, Firms" type="text" />#}
-{#                     </div>#}
-{#                  </div>#}
-{#                  <div class="col-sm-4 noPadding">#}
-{#                     <div class="form-group">#}
-{#                        <div class="input-group inputIcon">#}
-{#                           <img  src="/static/img/Location.svg" alt="location" />#}
-{#                           <input class="form-control" placeholder="Location" type="text" />#}
-{#                           <div class="input-group-btn">#}
-{#                              <button class="btn btn-lg customSearchBtn" type="submit">#}
-{#                              <img style="margin-left: 20px;" src="/static/img/Search.svg" alt="search" />#}
-{#                              </button>#}
-{#                           </div>#}
-{#                        </div>#}
-{#                     </div>#}
-{#                  </div>#}
-{#               </div>#}
+<!--{#               <div id="mainForms" class="row wow fadeInLeft">#}-->
+<!--{#                  <div class="col-sm-8 noPadding">#}-->
+<!--{#                     <div class="form-group">#}-->
+<!--{#                        <input class="form-control" placeholder="Interior, Architects, Contractors, Firms" type="text" />#}-->
+<!--{#                     </div>#}-->
+<!--{#                  </div>#}-->
+<!--{#                  <div class="col-sm-4 noPadding">#}-->
+<!--{#                     <div class="form-group">#}-->
+<!--{#                        <div class="input-group inputIcon">#}-->
+<!--{#                           <img  src="/static/img/Location.svg" alt="location" />#}-->
+<!--{#                           <input class="form-control" placeholder="Location" type="text" />#}-->
+<!--{#                           <div class="input-group-btn">#}-->
+<!--{#                              <button class="btn btn-lg customSearchBtn" type="submit">#}-->
+<!--{#                              <img style="margin-left: 20px;" src="/static/img/Search.svg" alt="search" />#}-->
+<!--{#                              </button>#}-->
+<!--{#                           </div>#}-->
+<!--{#                        </div>#}-->
+<!--{#                     </div>#}-->
+<!--{#                  </div>#}-->
+<!--{#               </div>#}-->
             </div>
          </div>
          <div class="listingNavMenu2">
@@ -101,7 +101,7 @@
       <!-- path start -->
       <nav>
          <div class="listingPath">
-            <p class="paths"><span>Home</span> &nbsp;  > &nbsp; <span>Results</span>&nbsp;   > &nbsp;  <span>Profile</span></p>
+             <p class="paths"><a href="{% url 'home' %}" ><span>Home</span> </a> &nbsp;  > &nbsp; <span>Results</span>&nbsp;   > &nbsp;  <span>Profile</span> </p>
          </div>
       </nav>
       <!-- path end -->
@@ -120,9 +120,9 @@
                         <p class="standpoint">{{ user.sub_category }}</p>
                      </div>
                   </div>
-{#                  <div class="bookAppointment">#}
-{#                     Book Appointment#}
-{#                  </div>#}
+<!--{#                  <div class="bookAppointment">#}-->
+<!--{#                     Book Appointment#}-->
+<!--{#                  </div>#}-->
                </div>
             </div>
          </div>
@@ -133,10 +133,12 @@
                <button id="aboutDesigner" class="btnlist" type="button" name="button">About Designer</button>
             </div>
             <div class="col-xs-12 col-lg-2">
-                <button id="projectPhotos" class="btnlist" type="button" name="button">Project Photos</button>
+               <a href="{% url 'project_photos' user.user_id %}">
+                <button id="projectPhotos" class="btnlist" type="button" name="button">Project Photos</button></a>
             </div>
             <div class="col-xs-12 col-lg-2">
-                    <button id="designPhotos" class="btnlist" type="button" name="button">Design Photos</button>
+               <a href="{% url 'design_photos' user.user_id %}">
+                    <button id="designPhotos" class="btnlist" type="button" name="button">Design Photos</button></a>
             </div>
          </div>
       </div>
@@ -145,24 +147,24 @@
          <div class="container-fluid">
             <div class="row clientProvieInfoBg">
                <div class="col-xs-12 col-lg-12">
-{#                  <div class="row">#}
-{#                     <ul class="ClientProfile-menu">#}
-{#                        <li><a href="#">All</a></li>#}
-{#                        <li><a href="#">Home Interior</a></li>#}
-{#                        <li><a href="#">Office Interior</a></li>#}
-{#                        <li><a href="#">Modern Interior</a></li>#}
-{#                        <li><a href="#">Luxury</a> </li>#}
-{#                        <li><a href="#">Luxury</a></li>#}
-{#                        <li><a href="#">306 Reviews &nbsp;#}
-{#                           <i class="fa fa-star"></i>#}
-{#                           <i class="fa fa-star"></i>#}
-{#                           <i class="fa fa-star"></i>#}
-{#                           <i class="fa fa-star"></i>#}
-{#                           <i class="fa fa-star"></i>#}
-{#                           </a>#}
-{#                        </li>#}
-{#                     </ul>#}
-{#                  </div>#}
+                <div class="row">
+                     <ul class="ClientProfile-menu">
+                       <li><a href="#">All</a></li>
+                        <li><a href="#">Home Interior</a></li>
+                        <li><a href="#">Office Interior</a></li>
+                        <li><a href="#">Modern Interior</a></li>
+                        <li><a href="#">Luxury</a> </li>
+                        <li><a href="#">Luxury</a></li>
+                        <li><a href="#">306 Reviews &nbsp;
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           </a>
+                        </li>
+                     </ul>
+                  </div>
                   <div class="row">
                      <div style="padding: 20px;" class="col-xs-12 col-lg-12">
                         <h4 style="color: #20c3db;">Info</h4>
@@ -248,145 +250,6 @@
          </div>
       </div>
       <!-- tab 1 end -->
-
-      <div class="GalleryBg" id="tab-2">
-         <div class="container-fluid">
-            <div class="row mainGallery">
-               <!-- thumbnail 1 -->
-                {% for photo in users %}
-               <div class="col-xs-12 col-sm-4" data-toggle="modal" data-target="#popup-image-gallery" tabindex="0">
-                  <div class="card">
-                     <a class="img-card" href="#">
-                     <img src="{{ photo.0.project_images.url }}" alt="thumbs1" />
-                     </a>
-                     <a class="btnslideShow" href="#">
-                     <img src="/static/img/clientProfileview/slideshow.png" alt="thumbs1" />
-                     </a>
-                     <div class="totalPhotos">
-                         {{ photo|length }} photos
-                     </div>
-                     <div class="interiorLabels">
-                     <div class="card-content">
-                        <h4 class="card-title">
-                           <a href=""> Prestige Bougainvillea
-                           </a>
-                        </h4>
-                     </div>
-                  </div>
-               </div>
-                 <div class="maingallerypopup">
-                   <div class="modal popup-image-gallery" id="popup-image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                     <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                           <div class="modal-body">
-                              <button type="button" class="btn close-btn" title="Close" data-dismiss="modal" aria-label="Close">&#10006;</button>
-                              <div class="popup-slider-for">
-                                  {% for i in photo %}
-                                 <div class="main-image">
-                                    <img src="{{i.project_images.url}}" alt="">
-                                 </div>
-                                  {% endfor %}
-                              </div>
-                              <!-- thumbs -->
-
-                              <div class="popup-slider-nav hidden-xs">
-                           {% for j in photo %}
-                                 <div class="thumbnail-image">
-                                    <img src="{{j.project_images.url}}" alt="">
-                                 </div>
-                           {% endfor %}
-                              </div>
-
-                              <h5 class="pagingInfo"></h5>
-                              <h2 class="gallery_Title">Contemporary Villa</h2>
-                              <hr>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-                                 ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                 laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-                              </p>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-                {% endfor %}
-               <!-- thumbnail -end -->
-
-            </div>
-         </div>
-      </div>
-
-      <div style="clear:both;"></div>
-      <!-- tab-3 design photos  start-->
-      <div class="GalleryBg" id="tab-3">
-        <div class="container-fluid">
-           <div class="row mainGallery">
-               {% for designs in users1 %}
-              <!-- thumbnail 1 -->
-              <div class="col-xs-12 col-sm-4" data-toggle="modal" data-target="#popup-image-gallery" tabindex="0">
-                 <div class="card">
-                    <a class="img-card" href="#">
-                    <img src="{{ designs.0.design_images.url }}" alt="thumbs1" />
-                    </a>
-                    <a class="btnslideShow" href="#">
-                    <img src="/static/img/clientProfileview/slideshow.png" alt="thumbs1" />
-                    </a>
-                    <div class="totalPhotos">
-                       {{ designs|length }} photos
-                    </div>
-                    <div class="interiorLabels">
-                       Contemporary Villa
-                    </div>
-                    <div class="card-content">
-                       <h4 class="card-title">
-                          <a href="#"> Prestige Bougainvillea
-                          </a>
-                       </h4>
-                    </div>
-                 </div>
-              </div>
-                   <div class="maingallerypopup">
-             <div class="modal popup-image-gallery" id="popup-image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-               <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                     <div class="modal-body">
-                        <button type="button" class="btn close-btn" title="Close" data-dismiss="modal" aria-label="Close">&#10006;</button>
-                        <div class="popup-slider-for">
-                            {% for i in designs %}
-                           <div class="main-image">
-                              <img src="{{i.design_images.url}}" alt="">
-                           </div>
-                            {% endfor %}
-                        </div>
-                        <!-- thumbs -->
-
-                        <div class="popup-slider-nav hidden-xs">
-                     {% for j in designs %}
-                           <div class="thumbnail-image">
-                              <img src="{{j.design_images.url}}" alt="">
-                           </div>
-                     {% endfor %}
-                        </div>
-
-                        <h5 class="pagingInfo"></h5>
-                        <h2 class="gallery_Title">Contemporary Villa</h2>
-                        <hr>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-                           ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                           laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-                        </p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-               {% endfor %}
-              <!-- thumbnail -end -->
-           </div>
-        </div>
-      </div>
-      <!-- tab-3 design photos  ended -->
-      <!-- content ended -->
       <!-- Footer -->
       <footer class="footer">
          <div class="container">

@@ -10,6 +10,8 @@
       <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
       <link rel="stylesheet" href="/static/font-awesome/css/font-awesome.min.css">
       <link rel="stylesheet" href="/static/css/animate.css">
+      <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css'>
+      <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css'>
       <link rel="stylesheet" href="/static/css/style.css">
       <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
       <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -26,7 +28,7 @@
    </head>
    <body>
       <!-- Top menu -->
-      <nav class="navbar navbar-inverse" role="navigation">
+      <nav class="navbar navbar-inverse">
          <div class="container">
             <div class="navbar-header">
                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
@@ -40,8 +42,8 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="top-navbar-1">
                <ul class="nav navbar-nav navbar-right">
-                  <li><a href="/client/client_login">Login for BusIness</a></li>
-                  <li><a href="/login_register">Login / Register</a></li>
+                  <li><a href="#">Login for BusIness</a></li>
+                  <li><a href="#">Login / Register</a></li>
                </ul>
             </div>
          </div>
@@ -60,11 +62,11 @@
                   <div class="col-sm-4 noPadding">
                      <div class="form-group">
                         <div class="input-group inputIcon">
-                           <img role="img"  src="/static/img/Location.svg" />
+                           <img  src="/static/img/Location.svg" alt="location" />
                            <input class="form-control" placeholder="Location" type="text" />
                            <div class="input-group-btn">
                               <button class="btn btn-lg customSearchBtn" type="submit">
-                              <img role="img" style="margin-left: 20px;" src="/static/img/Search.svg" />
+                              <img style="margin-left: 20px;" src="/static/img/Search.svg" alt="search" />
                               </button>
                            </div>
                         </div>
@@ -74,25 +76,25 @@
             </div>
          </div>
          <div class="listingNavMenu2">
-<!--            <div class="sortTitle">-->
-<!--               <p class="sortBy">Sort By</p>-->
-<!--            </div>-->
-<!--            <div class="select">-->
-<!--               <select name="slct" id="slct">-->
-<!--                  <option selected disabled>Specialization</option>-->
-<!--                  <option value="1">zzzzzzzz</option>-->
-<!--                  <option value="2">xxxxxxxx</option>-->
-<!--                  <option value="3">xxxxxxxxx</option>-->
-<!--               </select>-->
-<!--            </div>-->
-<!--            <div class="select">-->
-<!--               <select name="slct" id="slct">-->
-<!--                  <option selected disabled>Experience</option>-->
-<!--                  <option value="1">5</option>-->
-<!--                  <option value="2">10</option>-->
-<!--                  <option value="3">20</option>-->
-<!--               </select>-->
-<!--            </div>-->
+            <div class="sortTitle">
+               <p class="sortBy">Sort By</p>
+            </div>
+            <div class="select">
+               <select name="slct" id="slct1">
+                  <option selected disabled>Specialization</option>
+                  <option value="1">zzzzzzzz</option>
+                  <option value="2">xxxxxxxx</option>
+                  <option value="3">xxxxxxxxx</option>
+               </select>
+            </div>
+            <div class="select">
+               <select name="slct" id="slct2">
+                  <option selected disabled>Experience</option>
+                  <option value="1">5</option>
+                  <option value="2">10</option>
+                  <option value="3">20</option>
+               </select>
+            </div>
          </div>
       </nav>
       <!-- sortBy end -->
@@ -103,98 +105,119 @@
          </div>
       </nav>
       <!-- path end -->
-      <!-- filter navigation start -->
-      <div class="listing_filtersProfile">
+      <!-- client profile view start -->
       <div class="container-fluid">
          <div class="row">
-            <div class="col-sm-3 col-xs-12">
-               <div id="mainFilters" class="listing_filter_bar">
-                  <h4 class="heading">Filters</h4>
-                  <p class="head">Style</p>
-                  <ul class="loginFormCheck filtersListStyles">
-                     <li>
-                        <input type="checkbox" id="morden_style">
-                        <label for="morden_style">Mordern</label>
-                     </li>
-                     <li>
-                        <input type="checkbox" id="traditional_style">
-                        <label for="traditional_style">Traditional</label>
-                     </li>
-                     <li>
-                        <input type="checkbox" id="Bohemian_style">
-                        <label for="Bohemian_style">Bohemian</label>
-                     </li>
-                  </ul>
-                  <hr>
-                  <p class="head">Budget</p>
-                  <div class="mainslider">
-                     <div class="range-slider">
-                        <input value="20" id="rangeMin" min="0" max="100" step="5" type="range"/>
-                        <input value="50" id="rangeMax" min="0" max="100" step="5" type="range"/>
-                        <svg width="100%" height="24">
-                           <line x1="4" y1="0" x2="300" y2="0" stroke="#444" stroke-width="12" stroke-dasharray="1 28"></line>
-                        </svg>
-                        <span class="valueInputs">
-                        <input type="number" value="20" min="0" max="100"/>	to
-                        <input type="number" value="50" min="0" max="100"/>
-                        </span>
+            <div class="col-xs-12">
+               <div class="clientProfileviewBanner">
+                  <div class="clientUserprofile">
+                     <div class="clientUser">
+                        <img class="user" src="/static/img/userImage/user1.jpg" alt="alexUser">
+                     </div>
+                     <div class="userDesignation">
+                        <p class="clientName">Alex John</p>
+                        <p><button id="clientDesignation" type="button" name="button">Interior Designer</button></p>
+                        <p class="standpoint">Residential & Commercial</p>
                      </div>
                   </div>
-<!--                  <hr>-->
-<!--                  <p class="head">Rating</p>-->
-<!--                  <ul class="loginFormCheck filtersListStyles">-->
-<!--                     <li>-->
-<!--                        <input type="checkbox" id="2andAbove">-->
-<!--                        <label for="2andAbove">2 &#9733; and above</label>-->
-<!--                     </li>-->
-<!--                     <li>-->
-<!--                        <input type="checkbox" id="3andAbove">-->
-<!--                        <label for="3andAbove">3 &#9733; and above</label>-->
-<!--                     </li>-->
-<!--                     <li>-->
-<!--                        <input type="checkbox" id="5only">-->
-<!--                        <label for="5only">5 &#9733; only</label>-->
-<!--                     </li>-->
-<!--                  </ul>-->
-               </div>
-            </div>
-<div class="col-sm-9 col-xs-12" id="filtered_result">
-            {% include 'filter_listingPage.html' %}
-</div>
-
-            <div class="row">
-               <div class="com-sm12 col-xs-12">
-                  <nav class="mainPagination" aria-label="Page navigation example">
-                      {% if users.has_other_pages %}
-  <ul class="pagination">
-    {% if users.has_previous %}
-      <li><a href="?page={{ users.previous_page_number }}">&laquo;</a></li>
-    {% else %}
-      <li class="disabled"><span>&laquo;</span></li>
-    {% endif %}
-    {% for i in users.paginator.page_range %}
-      {% if users.number == i %}
-        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
-      {% else %}
-        <li><a href="?page={{ i }}">{{ i }}</a></li>
-      {% endif %}
-    {% endfor %}
-    {% if users.has_next %}
-      <li><a href="?page={{ users.next_page_number }}">&raquo;</a></li>
-    {% else %}
-      <li class="disabled"><span>&raquo;</span></li>
-    {% endif %}
-  </ul>
-{% endif %}
-                  </nav>
+                  <div class="bookAppointment">
+                     Book Appointment
+                  </div>
                </div>
             </div>
          </div>
       </div>
-      <!-- filter navigation end -->
+      <div class="container-fluid">
+         <div class="row">
+            <div class="col-xs-12 col-lg-2">
+              <a href="{% url 'view_profile' user.user_id %}">
+               <button id="aboutDesigner" class="btnlist" type="button" name="button">About Designer</button>
+              </a>
+            </div>
+            <div class="col-xs-12 col-lg-2">
+              <a href="{% url 'project_photos' user.user_id %}">
+               <button id="projectPhotos" class="btnlist" type="button" name="button">Project Photos</button>
+             </a>
+            </div>
+            <div class="col-xs-12 col-lg-2">
+              <a href="{% url 'design_photos' user.user_id %}">
+               <button id="designPhotos" class="btnlist active" type="button" name="button">Design Photos</button>
+              </a>
+            </div>
+         </div>
+      </div>
+      <!-- design gallery pop-up -->
+
+      <!-- end -->
+      <div class="GalleryBg" id="tab">
+         <div class="container-fluid">
+            <div class="row mainGallery">
+               <!-- thumbnail 1 -->
+               {% for user in users %}
+                  <div class="col-xs-12 col-sm-4" data-toggle="modal" data-target="#popup-image-gallery{{user.0.design_number}}" tabindex="0">
+                  <div class="card">
+                     <a class="img-card" href="#">
+                     <img src="{{user.0.design_images.url}}" alt="thumbs1" />
+                     </a>
+                     <a class="btnslideShow" href="#">
+                     <img src="/static/img/clientProfileview/slideshow.png" alt="thumbs1" />
+                     </a>
+                     <div class="totalPhotos">
+                        {{user|length}} photos
+                     </div>
+                     <div class="interiorLabels">
+                        {{user.0.design_type}}
+                     </div>
+                     <div class="card-content">
+                        <h4 class="card-title">
+                           <a href="#"> {{user.0.design_name}}
+                           </a>
+                        </h4>
+                     </div>
+                  </div>
+               </div>
+            <div class="maingallerypopup">
+                    <div class="modal popup-image-gallery{{user.0.design_number}}" id="popup-image-gallery{{user.0.design_number}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+               <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                     <div class="modal-body">
+                        <button type="button" class="btn close-btn" title="Close" data-dismiss="modal" aria-label="Close">&#10006;</button>
+                        <div class="popup-slider-for{{user.0.design_number}}">
+                            {% for i in user %}
+                           <div class="main-image">
+                              <img src="{{i.design_images.url}}" alt="">
+                           </div>
+                            {% endfor %}
+                        </div>
+                        <!-- thumbs -->
+
+                        <div class="popup-slider-nav{{user.0.design_number}} hidden-xs">
+                     {% for j in user %}
+                           <div class="thumbnail-image">
+                              <img src="{{j.design_images.url}}" alt="">
+                           </div>
+                     {% endfor %}
+                        </div>
+
+                        <h5 class="pagingInfo"></h5>
+                        <h2 class="gallery_Title">Modernvilla</h2>
+                        <hr>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+                {% endfor %}
+               <!-- thumbnail -end -->
+
+            </div>
+         </div>
+      </div>
+
+      <div style="clear:both;"></div>
       <!-- content ended -->
       <!-- Footer -->
-      <footer>
+      <footer class="footer">
          <div class="container">
             <div class="row">
                <div class="col-xs-12 col-md-3">
@@ -248,13 +271,13 @@
       <!-- Javascript -->
       <script src="/static/js/jquery-1.11.1.min.js"></script>
       <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js'></script>
       <script src="/static/js/jquery.backstretch.min.js"></script>
       <script src="/static/js/wow.min.js"></script>
       <script src="/static/js/retina-1.1.0.min.js"></script>
       <script src="/static/js/scripts.js"></script>
       <!--[if lt IE 10]>
       <script src="/static/js/placeholder.js"></script>
-     <![endif]-->
-      </div>
+      <![endif]-->
    </body>
 </html>

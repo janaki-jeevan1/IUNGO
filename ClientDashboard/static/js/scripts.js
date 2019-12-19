@@ -3,7 +3,7 @@ jQuery(document).ready(function() {
     /*
         Background slideshow
     */
-    $('.top-content').backstretch("/static/img/backgrounds/1.jpg");
+    $('.top-content').backstretch("assets/img/backgrounds/1.jpg");
 
     $('#top-navbar-1').on('shown.bs.collapse', function(){
     	$('.top-content').backstretch("resize");
@@ -79,28 +79,7 @@ jQuery(document).ready(function() {
 
 })();
 
-
 //client view profile
-$('#tab-1').show();
-$('#tab-2').hide();
-$('#aboutDesigner').addClass('active');
-
-$('#aboutDesigner').click(function(){
-  $('#tab-1').show();
-  $('#tab-2').hide();
-  $('#aboutDesigner').addClass('active');
-  $('#projectPhotos').removeClass('active');
-
-});
-
-$('#projectPhotos').click(function(){
-  $('#tab-1').hide();
-  $('#tab-2').show();
-  $('#projectPhotos').addClass('active');
-  $('#aboutDesigner').removeClass('active');
-});
-
-
 
 // gallery popup start
 $('#popup-image-gallery').on('shown.bs.modal', function() {
@@ -110,9 +89,9 @@ $('#popup-image-gallery').on('shown.bs.modal', function() {
     arrows: true,
     fade: true,
     asNavFor: '.popup-slider-nav',
-
     // adaptiveHeight: true,
   });
+
   $('.popup-slider-nav').slick({
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -122,7 +101,7 @@ $('#popup-image-gallery').on('shown.bs.modal', function() {
     focusOnSelect: true,
     variableWidth: true,
     centerMode: true,
-    infinite: false,
+    infinite: true,
   });
 });
 // Slick.js: Get current and total slides (ie. 3/5)

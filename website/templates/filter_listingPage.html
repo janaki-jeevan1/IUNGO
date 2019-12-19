@@ -6,13 +6,13 @@
                   </div>
                   <div class="profile_textfield">
                      <div class="userDesignation">
-                        <p id="Name">{{user.user.username}}</p>
+                        <p id="Name">{{user.user.first_name}} {{user.user.last_name}}</p>
                         <small>{{ user.category }}-{{ user.sub_category }}</small>
                      </div>
                      <div class="Userdetails">
                         <div class="left">
                            <p><img src="/static/img/listingPage/Experience.png"> {{ user.qualification }} </p>
-                           <p><img src="/static/img/listingPage/Timing.png">  {{user.experience}}+ Years</p>
+                           <p><img src="/static/img/listingPage/Timing.png">  {{user.experience}} Years</p>
                           <p><img src="/static/img/Location.svg"/>{{ user.location }}</p>
                         </div>
                         <div class="right">

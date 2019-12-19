@@ -276,7 +276,13 @@ def user_list(request, category_id, user_type):
 def view_profile(request, user_id):
     Parameters.objects.create(date_time=date.today(), user=User.objects.get(id=user_id), clicks='1')
     user1 = Portfolio.objects.get(user_id=user_id)
+    return render(request, 'viewprofile1.html', {'user': user1})
+
+
+def project_photos(request,user_id):
+
     users = Project.objects.filter(user_id=user_id)
+    user = Portfolio.objects.get(user_id=user_id)
     project_list = list()
     for user in users:
         if int(user.project_number) not in project_list:
@@ -286,7 +292,13 @@ def view_profile(request, user_id):
         project_images = Project.objects.filter(user_id=user_id, project_number=i)
         project_images_list.append(list(project_images))
 
+    return render(request,'projectPhotos.html',{'users':project_images_list, 'user':user})
+
+
+def design_photos(request, user_id):
+    #import pdb;pdb.set_trace()
     users1 = Design.objects.filter(user_id=user_id)
+    user = Portfolio.objects.get(user_id=user_id)
     design_list = list()
     for user in users1:
         if int(user.design_number) not in design_list:
@@ -296,27 +308,12 @@ def view_profile(request, user_id):
         design_images = Design.objects.filter(user_id=user_id, design_number=i)
         design_images_list.append(list(design_images))
 
-    return render(request, 'viewprofile.html', {'user': user1, 'users': project_images_list,'users1':design_images_list})
+    return render(request, "designPhotos.html", {'users': design_images_list, 'user':user})
 
 
 def enquiry(request,user_id):
    user=Portfolio.objects.get(user_id=user_id)
    return render(request,'enquiry.html',{'user':user})
-
-
-def design_photos(request, user_id):
-    #import pdb;pdb.set_trace()
-    user1 = Design.objects.filter(user_id=user_id)
-    design_list = list()
-    for user in user1:
-        if int(user.design_number) not in design_list:
-            design_list.append(int(user.design_number))
-    design_images_list = list()
-    for i in design_list:
-        design_images = Design.objects.filter(user_id=user_id, design_number=i)
-        design_images_list.append(list(design_images))
-
-    return render(request, "designphotos.html", {'users': design_images_list})
 
 
 def filters(request,category_id,user_type):
@@ -368,7 +365,7 @@ def feedback(request):
         if form.is_valid():
             form.save(commit=True)
         return redirect('view_profile')
-    return render(request, 'viewprofile.html', {'form': form})
+    return render(request, 'viewprofile1.html', {'form': form})
 
 
 def getfeedback(request, user_id):

@@ -21,6 +21,7 @@ urlpatterns = [
                   path('view_profile/<int:user_id>/', views.view_profile, name='view_profile'),
                   path('enquiry/<int:user_id>/',views.enquiry,name='enquiry'),
                   path('design_photos/<int:user_id>/', views.design_photos, name='design_photos'),
+                path('project_photos/<int:user_id>/', views.project_photos, name='project_photos'),
                   path('send_sms/',views.send_sms_user,name='send_sms'),
                   path('userlist/<int:category_id>/<str:user_type>/filters/',views.filters, name='filters'),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
