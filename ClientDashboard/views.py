@@ -97,6 +97,7 @@ def client_register(request):
             obj = form.save(commit=False)
             obj.is_active = 1
             obj.email = form.cleaned_data["email"]
+            obj.username = form.cleaned_data['email'].split('@')[0]
             obj.save()
             obj.portfolio.mobile_phone = form.cleaned_data["mobile_phone"]
             obj.portfolio.client = 1
@@ -476,7 +477,6 @@ class PortfolioView(View):
             if request.POST.get('userName'):
                 username = request.POST.get('userName').split(' ')
                 user_details.first_name = username[0]
-                user_details.username = username[0]+"."+" ".join(username[1:])
                 username.pop(0)
                 if username:
                     user_details.last_name = " ".join(username)
