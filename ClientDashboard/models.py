@@ -180,7 +180,9 @@ def create_client_profile(sender, instance, created, **kwargs):
     if created:
         category = Category.objects.get(id=1)
         subcategory = sub_category.objects.get(id=1)
-        Portfolio.objects.create(user=instance, category=category, sub_category=subcategory)
+        child = child_sub_category.objects.get(id=1)
+        Portfolio.objects.create(user=instance, category=category, sub_category=subcategory,
+                                 child_sub_category=child)
 
 @receiver(post_save, sender=User)
 def save_client_profile(sender, instance, **kwargs):

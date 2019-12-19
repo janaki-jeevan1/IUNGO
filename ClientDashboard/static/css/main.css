@@ -554,22 +554,35 @@ left: 60px !important;
     margin: 10px;
 }
 /* over view */
-.vOption{
+.mainSection .option{
     background-color: #fff;
-    padding: 10 30px;
-    color: #28afc3;
-    border: 1px solid #28afc3;
-    border-radius: 10px;
+    color: #fff;
+
 }
 
-.vOption{
-    text-decoration: none;
-    color: #28afc3;
-    font-size: 20px;
+.mainSection .option a{
+	padding: 10px 30px;
+	background-color: #fff;
+	cursor: pointer;
+	border-radius: 5px;
+	color: #00c4de;
+	border: 1px solid #00c4de;
+	font-size: 20px;
 }
-.vOption.btnL{
+.mainSection .option a:hover{
+    background-color: #00c4de;
+    color: #fff;
+}
+
+.mainSection .option.btnL{
 float: left;
 }
-.vOption.btnR{
+
+.mainSection .option.btnR{
 float: right;
+}
+
+.mainSection .option a{
+    text-decoration: none;
+    color: #00c4de;
 }

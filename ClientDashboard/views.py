@@ -14,6 +14,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import *
 from django.template.context_processors import csrf
+from website.models import Parameters
 from django.views.generic import View
 from random import randint
 import random

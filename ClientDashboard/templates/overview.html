@@ -100,8 +100,8 @@
       <aside class="mainSection">
 
 
-            <button class="vOption btnL viewBtn" id="1"> Views</button>
-             <button class="vOption btnR clickBtn" id="2"> Clicks</button>
+            <button class="option btnL active" id="1"><a href="overview">Clicks</a></button>
+            <button class="option btnR" id="2"><a href="overview">Views</a></button>
 
 <!--        <p class="option" id="3"><a href="overview">Designs, Invoices and Proposals</a></p>-->
 <!--        <p class="option" id="4"><a href="overview">Appointments</a></p>-->
@@ -115,8 +115,8 @@
 
       $('.option').click(function(event){
             event.preventDefault();
-            var id = this.id;
 
+            var id = this.id;
             $.ajax({
                 url:'/client/overview',
                 data: {"id": id},

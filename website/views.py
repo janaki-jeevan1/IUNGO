@@ -274,6 +274,7 @@ def user_list(request, category_id, user_type):
 
 
 def view_profile(request, user_id):
+    Parameters.objects.create(date_time=date.today(), user=User.objects.get(id=user_id), clicks='1')
     user1 = Portfolio.objects.get(user_id=user_id)
     users = Project.objects.filter(user_id=user_id)
     project_list = list()
