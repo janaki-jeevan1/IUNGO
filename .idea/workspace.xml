@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10cd7c76-b79c-4987-b68f-e33a0ea3f6b0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/IUNGO.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/IUNGO.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientDashboard/static/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/ClientDashboard/static/js/scripts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IUNGO/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/IUNGO/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/scripts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/templates/designPhotos.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/designPhotos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/templates/filter_listingPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/filter_listingPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/templates/listingPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/listingPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/templates/projectPhotos.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/projectPhotos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/templates/viewprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/viewprofile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/templates/viewprofile1.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/viewprofile1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/enquiry.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/enquiry.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/searchlist1.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/searchlist1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/searchlistpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/searchlistpage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

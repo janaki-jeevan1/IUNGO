@@ -280,7 +280,6 @@ def view_profile(request, user_id):
 
 
 def project_photos(request,user_id):
-
     users = Project.objects.filter(user_id=user_id)
     user1 = Portfolio.objects.get(user_id=user_id)
     project_list = list()
