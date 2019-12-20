@@ -52,16 +52,17 @@
          <div class="listingNavMenu1">
             <div class="listingNavInput">
                <div id="mainForms" class="row wow fadeInLeft">
+                  <form action="{% url 'search' %}" method="get" >
                   <div class="col-sm-8 noPadding">
                      <div class="form-group">
-                        <input class="form-control" placeholder="Interior, Architects, Contractors, Firms" type="text" />
+                        <input class="form-control" placeholder="Interior, Architects, Contractors, Firms" type="text" name="q"/>
                      </div>
                   </div>
                   <div class="col-sm-4 noPadding">
                      <div class="form-group">
                         <div class="input-group inputIcon">
                            <img role="img"  src="/static/img/Location.svg" />
-                           <input class="form-control" placeholder="Location" type="text" />
+                           <input class="form-control" placeholder="Location" type="text" value="{{ city }}" name="location"/>
                            <div class="input-group-btn">
                               <button class="btn btn-lg customSearchBtn" type="submit">
                               <img role="img" style="margin-left: 20px;" src="/static/img/Search.svg" />
@@ -69,7 +70,7 @@
                            </div>
                         </div>
                      </div>
-                  </div>
+                  </div></form>
                </div>
             </div>
          </div>
@@ -99,7 +100,7 @@
       <!-- path start -->
       <nav>
          <div class="listingPath">
-            <p class="paths"><span>Home</span> &nbsp;  > &nbsp; <span>Results</span>&nbsp;   > &nbsp;  <span>Profile</span></p>
+            <p class="paths"><a href="{% url 'home' %}" ><span>Home</span> </a>  &nbsp;  > &nbsp; <span>Results</span>&nbsp;   > &nbsp;  <span>Profile</span></p>
          </div>
       </nav>
       <!-- path end -->

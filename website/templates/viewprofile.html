@@ -76,25 +76,25 @@
             </div>
          </div>
          <div class="listingNavMenu2">
-            <div class="sortTitle">
-               <p class="sortBy">Sort By</p>
-            </div>
-            <div class="select">
-               <select name="slct" id="slct1">
-                  <option selected disabled>Specialization</option>
-                  <option value="1">zzzzzzzz</option>
-                  <option value="2">xxxxxxxx</option>
-                  <option value="3">xxxxxxxxx</option>
-               </select>
-            </div>
-            <div class="select">
-               <select name="slct" id="slct2">
-                  <option selected disabled>Experience</option>
-                  <option value="1">5</option>
-                  <option value="2">10</option>
-                  <option value="3">20</option>
-               </select>
-            </div>
+<!--            <div class="sortTitle">-->
+<!--               <p class="sortBy">Sort By</p>-->
+<!--            </div>-->
+<!--            <div class="select">-->
+<!--               <select name="slct" id="slct1">-->
+<!--                  <option selected disabled>Specialization</option>-->
+<!--                  <option value="1">zzzzzzzz</option>-->
+<!--                  <option value="2">xxxxxxxx</option>-->
+<!--                  <option value="3">xxxxxxxxx</option>-->
+<!--               </select>-->
+<!--            </div>-->
+<!--            <div class="select">-->
+<!--               <select name="slct" id="slct2">-->
+<!--                  <option selected disabled>Experience</option>-->
+<!--                  <option value="1">5</option>-->
+<!--                  <option value="2">10</option>-->
+<!--                  <option value="3">20</option>-->
+<!--               </select>-->
+<!--            </div>-->
          </div>
       </nav>
       <!-- sortBy end -->
@@ -254,7 +254,7 @@
             <div class="row mainGallery">
                <!-- thumbnail 1 -->
                 {% for photo in users %}
-               <div class="col-xs-12 col-sm-4" data-toggle="modal" data-target="#popup-image-gallery" tabindex="0">
+               <div class="col-xs-12 col-sm-4" data-toggle="modal" data-target="#popup-image-gallery{{photo.0.project_number}}" tabindex="0">
                   <div class="card">
                      <a class="img-card" href="#">
                      <img src="{{ photo.0.project_images.url }}" alt="thumbs1" />
@@ -275,7 +275,7 @@
                   </div>
                </div>
                  <div class="maingallerypopup">
-                   <div class="modal popup-image-gallery" id="popup-image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                   <div class="modal popup-image-gallery" id="popup-image-gallery{{photo.0.project_number}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                      <div class="modal-dialog" role="document">
                         <div class="modal-content">
                            <div class="modal-body">
@@ -323,7 +323,7 @@
            <div class="row mainGallery">
                {% for designs in users1 %}
               <!-- thumbnail 1 -->
-              <div class="col-xs-12 col-sm-4" data-toggle="modal" data-target="#popup-image-gallery" tabindex="0">
+              <div class="col-xs-12 col-sm-4" data-toggle="modal" data-target="#popup-image-gallery{{designs.0.design_number}}" tabindex="0">
                  <div class="card">
                     <a class="img-card" href="#">
                     <img src="{{ designs.0.design_images.url }}" alt="thumbs1" />
@@ -346,7 +346,7 @@
                  </div>
               </div>
                    <div class="maingallerypopup">
-             <div class="modal popup-image-gallery" id="popup-image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+             <div class="modal popup-image-gallery" id="popup-image-gallery{{designs.0.design_number}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                <div class="modal-dialog" role="document">
                   <div class="modal-content">
                      <div class="modal-body">

@@ -1,11 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="10cd7c76-b79c-4987-b68f-e33a0ea3f6b0" name="Default Changelist" comment="" />
+    <list default="true" id="10cd7c76-b79c-4987-b68f-e33a0ea3f6b0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/IUNGO.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/IUNGO.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientDashboard/static/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/ClientDashboard/static/js/scripts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IUNGO/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/IUNGO/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/scripts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/designPhotos.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/designPhotos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/filter_listingPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/filter_listingPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/listingPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/listingPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/projectPhotos.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/projectPhotos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/viewprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/viewprofile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/viewprofile1.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/viewprofile1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/views.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1V9LLNIKoLth8TEf4lsmJqyFzvB" />
   <component name="ProjectViewState">
@@ -15,6 +32,40 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/IUNGO/settings.py" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.django.DjangoModulesConfigurable" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/website/templates/viewprofile.html" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/website/templates" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="IUNGO" type="Python.DjangoServer" factoryName="Django server">
+      <module name="IUNGO" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="IUNGO.settings" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/PycharmProjects/iungo/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="localhost" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -40,5 +91,31 @@
       <updated>1576660307525</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="502" y="53" width="652" height="818" key="#IUNGO" timestamp="1576816502629">
+      <screen x="67" y="27" width="1533" height="873" />
+    </state>
+    <state x="502" y="53" width="652" height="818" key="#IUNGO/67.27.1533.873@67.27.1533.873" timestamp="1576816502629" />
+    <state x="291" y="120" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576816351004">
+      <screen x="67" y="27" width="1533" height="873" />
+    </state>
+    <state x="291" y="120" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1533.873@67.27.1533.873" timestamp="1576816351004" />
+    <state x="167" y="125" width="1333" height="675" key="DiffContextDialog" timestamp="1576747987097">
+      <screen x="67" y="27" width="1533" height="873" />
+    </state>
+    <state x="167" y="125" width="1333" height="675" key="DiffContextDialog/67.27.1533.873@67.27.1533.873" timestamp="1576747987097" />
+    <state x="570" y="222" width="515" height="479" key="EnvironmentVariablesDialog" timestamp="1576816492726">
+      <screen x="67" y="27" width="1533" height="873" />
+    </state>
+    <state x="570" y="222" width="515" height="479" key="EnvironmentVariablesDialog/67.27.1533.873@67.27.1533.873" timestamp="1576816492726" />
+    <state x="616" y="220" width="424" height="484" key="FileChooserDialogImpl" timestamp="1576816471112">
+      <screen x="67" y="27" width="1533" height="873" />
+    </state>
+    <state x="616" y="220" width="424" height="484" key="FileChooserDialogImpl/67.27.1533.873@67.27.1533.873" timestamp="1576816471112" />
+    <state x="322" y="97" key="SettingsEditor" timestamp="1576816496723">
+      <screen x="67" y="27" width="1533" height="873" />
+    </state>
+    <state x="322" y="97" key="SettingsEditor/67.27.1533.873@67.27.1533.873" timestamp="1576816496723" />
   </component>
 </project>
