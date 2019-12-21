@@ -280,9 +280,8 @@ def view_profile(request, user_id):
 
 
 def project_photos(request,user_id):
-
     users = Project.objects.filter(user_id=user_id)
-    user = Portfolio.objects.get(user_id=user_id)
+    user1 = Portfolio.objects.get(user_id=user_id)
     project_list = list()
     for user in users:
         if int(user.project_number) not in project_list:
@@ -292,13 +291,13 @@ def project_photos(request,user_id):
         project_images = Project.objects.filter(user_id=user_id, project_number=i)
         project_images_list.append(list(project_images))
 
-    return render(request,'projectPhotos.html',{'users':project_images_list, 'user':user})
+    return render(request,'projectPhotos.html',{'users':project_images_list, 'user':user1})
 
 
 def design_photos(request, user_id):
     #import pdb;pdb.set_trace()
     users1 = Design.objects.filter(user_id=user_id)
-    user = Portfolio.objects.get(user_id=user_id)
+    user1 = Portfolio.objects.get(user_id=user_id)
     design_list = list()
     for user in users1:
         if int(user.design_number) not in design_list:
@@ -308,7 +307,7 @@ def design_photos(request, user_id):
         design_images = Design.objects.filter(user_id=user_id, design_number=i)
         design_images_list.append(list(design_images))
 
-    return render(request, "designPhotos.html", {'users': design_images_list, 'user':user})
+    return render(request, "designPhotos.html", {'users': design_images_list, 'user':user1})
 
 
 def enquiry(request,user_id):

@@ -3,7 +3,7 @@ jQuery(document).ready(function() {
     /*
         Background slideshow
     */
-    $('.top-content').backstretch("assets/img/backgrounds/1.jpg");
+    $('.top-content').backstretch("/static/img/backgrounds/1.jpg");
 
     $('#top-navbar-1').on('shown.bs.collapse', function(){
     	$('.top-content').backstretch("resize");
@@ -126,8 +126,8 @@ $('.popup-slider-for').on('afterChange', function(event, slick, currentSlide, ne
 // gallery popup ended
 
 // listing page filters start
-False = false
-True = true
+False = false;
+True = true;
 const filtersData = {
                       mordern: False,
                       traditional: False,

@@ -76,25 +76,25 @@
             </div>
          </div>
          <div class="listingNavMenu2">
-            <div class="sortTitle">
-               <p class="sortBy">Sort By</p>
-            </div>
-            <div class="select">
-               <select name="slct" id="slct1">
-                  <option selected disabled>Specialization</option>
-                  <option value="1">zzzzzzzz</option>
-                  <option value="2">xxxxxxxx</option>
-                  <option value="3">xxxxxxxxx</option>
-               </select>
-            </div>
-            <div class="select">
-               <select name="slct" id="slct2">
-                  <option selected disabled>Experience</option>
-                  <option value="1">5</option>
-                  <option value="2">10</option>
-                  <option value="3">20</option>
-               </select>
-            </div>
+<!--            <div class="sortTitle">-->
+<!--               <p class="sortBy">Sort By</p>-->
+<!--            </div>-->
+<!--            <div class="select">-->
+<!--               <select name="slct" id="slct1">-->
+<!--                  <option selected disabled>Specialization</option>-->
+<!--                  <option value="1">zzzzzzzz</option>-->
+<!--                  <option value="2">xxxxxxxx</option>-->
+<!--                  <option value="3">xxxxxxxxx</option>-->
+<!--               </select>-->
+<!--            </div>-->
+<!--            <div class="select">-->
+<!--               <select name="slct" id="slct2">-->
+<!--                  <option selected disabled>Experience</option>-->
+<!--                  <option value="1">5</option>-->
+<!--                  <option value="2">10</option>-->
+<!--                  <option value="3">20</option>-->
+<!--               </select>-->
+<!--            </div>-->
          </div>
       </nav>
       <!-- sortBy end -->
@@ -115,7 +115,7 @@
                         <img class="user" src="{{ user.profile_pic.url }}" alt="alexUser">
                      </div>
                      <div class="userDesignation">
-                        <p class="clientName">{{ user.user.username }}</p>
+                        <p class="clientName">{{user.user.first_name}} {{user.user.last_name}}</p>
                         <p><button id="clientDesignation" type="button" name="button">{{ user.category }}</button></p>
                         <p class="standpoint">{{ user.sub_category }}</p>
                      </div>
