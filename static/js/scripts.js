@@ -82,7 +82,7 @@ jQuery(document).ready(function() {
 //client view profile
 
 // gallery popup start
-$('.popup-image-gallery').on('shown.bs.modal', function() {
+$('popup-image-gallery').on('shown.bs.modal', function() {
   $('.popup-slider-for').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -91,8 +91,6 @@ $('.popup-image-gallery').on('shown.bs.modal', function() {
     asNavFor: '.popup-slider-nav',
     // adaptiveHeight: true,
   });
-
-
 
   $('.popup-slider-nav').slick({
     slidesToShow: 3,
