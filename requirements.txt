@@ -14,7 +14,7 @@ django-sendsms==0.2.3
 django-sms-gateway==1.2.1
 django-uuidfield-2==0.6.6
 djangorestframework==3.10.3
-httplib2==0.14.0
+httplib2==0.19.0
 idna==2.8
 ipdb==0.12.2
 ipython==7.9.0
